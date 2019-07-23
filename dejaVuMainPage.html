@@ -8,6 +8,9 @@
         <!--<link rel = "stylesheet" href="styles.css">-->
         <link rel="stylesheet" href="stylesheets/dejaVuModal.css">
     </head>
+    <script>
+        loadTableXMLDoc();
+    </script>
     <body>
         <header>
                 <h1><b>Deja Vu</b></h1>
@@ -22,6 +25,7 @@
         <h3>
             Button test
         </h3>
+        <p id='testPrint'></p>
         <div>
             <!--On click, Open modal screen to get new list item-->
             <button id='listBtn'> + </button>
@@ -33,8 +37,7 @@
                     <p>
                         TEST
                         <!--what does this require?
-                        Item desired
-                        Preferred location
+                        The form below should go here once the modal works.
                         -->
                     </p>
                 </div>
@@ -43,15 +46,25 @@
         <div>
             <!--This section needs to be put into the MODAL div above-->
             <h2>Add Item to List</h2>
+            
+            <button type='button' onclick='loadTableXMLDoc()'>Get List</button>
+            <br><br>
 
-            <form action="/action_page.php">
-                Item:<br>
-                <input type="text" name="item" placeholder="Item to be Picked up">
-                <br>
-                Preferred location (Optional)<br>
-                <input type="text" name="location" placeholder="Preferred Pickup Location">
-                <br><br>
-                <input type="submit" value="Submit">
+            <table id='printTable'></table>
+
+            <br><br>
+            
+            <form action="php/addToXML.php" method="POST">
+                <fieldset>
+                    <legend>Input new To Do Item</legend>
+                    Item:<br>
+                    <input type="text" id='item' name="item" placeholder="Item to be Picked up" required>
+                    <br><br>
+                    Preferred location (Optional)<br>
+                    <input type="text" id='dest' name="location" placeholder="Pickup Location">
+                    <br><br>
+                    <input type="submit" value="Submit">
+                </fieldset>
             </form> 
         </div>
         <div>
@@ -63,5 +76,6 @@
             </footer>
         </div>
         <script src='scripts/main.js'></script>
+        <script src='scripts/XMLRequests.js'></script>
     </body>
 </html>

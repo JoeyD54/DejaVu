@@ -1,3 +1,12 @@
+/********************************************************
+* This javascript is used to show the modal pop-up menu *
+* The menu will hold the form to add an item to the to  *
+* do list                                               *
+********************************************************/
+
+
+//THIS DOES NOT WORK. WTF!?!?!?!!?
+
 var modal = document.getElementById("listModal");
 
 // Get the button that opens the modal

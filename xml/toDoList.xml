@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<list>
+  <todo>
+    <item>pizza</item>
+    <dest>meijer</dest>
+  </todo>
+  <todo>
+    <item>grapes</item>
+    <dest>meijer</dest>
+  </todo>
+  <todo>
+    <item>awd</item>
+    <dest>awd</dest>
+  </todo>
+</list>

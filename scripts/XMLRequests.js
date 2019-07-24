@@ -36,7 +36,7 @@ function printTable(xml) {
         "</td><td>" +
         x[i].getElementsByTagName("dest")[0].childNodes[0].nodeValue +
         "</td><td>" +
-        "<span onclick='removeXMLItem()' class='close'>&times;</span>" +
+        "<span id=i onclick='removeXMLDocItem()' class='close'>&times;</span>" +
         "</td></tr>";
       
     }
@@ -64,7 +64,9 @@ function removeXMLItem(xml){
     //remove the desired item
     var x, xmlDoc, table, i;
     xmlDoc = xml.responseXML;
-    document.getElementById('testPrint').innerHTML = "test";
+    x = xmlDoc.getElementsByTagName('todo');
+    x.parentNode.RemoveChild(x);
+    document.getElementById('testPrint').innerHTML = x;
 }
 
 /********************************************************

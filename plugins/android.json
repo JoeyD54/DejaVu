@@ -9,6 +9,9 @@
   "installed_plugins": {
     "cordova-plugin-whitelist": {
       "PACKAGE_NAME": "com.example.dejavu"
+    },
+    "cordova-plugin-vibration": {
+      "PACKAGE_NAME": "com.example.dejavu"
     }
   },
   "dependent_plugins": {}

@@ -2,10 +2,10 @@
 //This program is called by the form's submit button.
 //When called, it will add the item from the form to the XML.
 
-    if(isset($_POST['location'])){
-        $itemName = $_POST['item'];
-        if(!empty($_POST['location'])){
-            $destName = $_POST['location'];
+    if(isset($_REQUEST['location'])){
+        $itemName = $_REQUEST['item'];
+        if(!empty($_REQUEST['location'])){
+            $destName = $_REQUEST['location'];
         } else {
             $destName = "Closest";
         }

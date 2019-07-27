@@ -17,7 +17,7 @@
     specific language governing permissions and limitations
     under the License.
 -->
-<html lang='eng'>
+<html>
     <head>
         <!--
         Customize this policy to fit your own app's needs. For more guidance, see:
@@ -32,77 +32,52 @@
         <meta name="format-detection" content="telephone=no">
         <meta name="msapplication-tap-highlight" content="no">
         <meta name="viewport" content="initial-scale=1, width=device-width, viewport-fit=cover">
-        <!--<link rel="stylesheet" type="text/css" href="css/index.css">-->
-        <meta charset="utf-8" />
         <meta name='keywords' content='deja,vu,deja vu, list, list keeper, gps, notifications, reminder'/>
         <meta name='description' content="width=device-width, initial-scale=1"/>
+        <link rel="stylesheet" type="text/css" href="css/index.css">
+        <link rel="stylesheet" href="css/w3.css">
         <title>Deja Vu</title>
-        <!--<link rel = "stylesheet" href="styles.css">-->
-        <link rel="stylesheet" href="stylesheets/dejaVuModal.css">
     </head>
-    <body>
-        <header>
-                <h1><b>Deja Vu</b></h1>
-                <hr>
-        </header>
-        <div class="app">
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-            </div>
+    <body onload = "onLoad();">
+        <div class="center">
+            <h1>Deja Vu</h1>
+            <h3>Your to-do list</h3>
         </div>
-        <div>
-            <!--On click, Open modal screen to get new list item-->
-            <button id='listBtn'> + </button>
-     
-            <div id='ListModal' class ='modal'>
-                <div class='modal-content'>
-                    <span class='close'>&times;</span>
-                        <!--Task list addition form-->
-                    <p>
-                        TEST
-                        <!--what does this require?
-                        The form below should go here once the modal works.
-                        -->
-                    </p>
+        <button id='doXMLWork'>do XML PLEASE</button>
+        <table id='printTable'></table>
+        <p id="printHere">test</p>
+
+        <div class="w3-container">
+            <ul id="printLists" class="w3-ul w3-card-4"></ul>
+        </div>
+        <div class="w3-container">
+            <button id="insertButton" class="w3-button w3-teal w3-large">Add Item</button>
+            <div id="toDoModal" class="w3-modal w3-center">
+                <div class="w3-modal-content w3-animate-bottom w3-card-4">
+                    <div class="w3-center">
+                        <header class="w3-container w3-teal">
+                            <span id="closeScreen" class="we-button w3-display-topright w3-hover-red w3-xlarge" title="Close">X</span>
+                            <h3>Insert Item</h3>
+                        </header>
+                        <form id= "inputForm" class="w3-container">
+                            <div class="w3-section">
+                                <label><b>Item Needed:</b></label>
+                                <input class="w3-input w3-border w3-margin-bottom" placeholder="What do you need to get?"
+                                    name="item" required>
+                                <label><b>From:</b></label>
+                                <input class="w3-input w3-border" placeholder="Where do you want to get this item?" name="location">
+                                <button id="submitButton" class="w3-button w3-block w3-teal w3-section w3-padding" type="submit">Submit</button>
+                            </div>
+                        </form>
+                        <div class="w3-container w3-border-top w3-paddin-16 w3-light-grey">
+                            <button id="cancelButton" type="button" class="w3-button w3-red">Cancel</button>
+                        </div>
                 </div>
             </div>
         </div>
-        <div>
-            <!--This section needs to be put into the MODAL div above-->
-            <h2>Add Item to List</h2>
-            
-            <button type='button' onclick='loadTableXMLDoc()'>Get List</button>
-            <br><br>
-
-            <table id='printTable'></table>
-
-            <br><br>
-            
-            <form action="php/addToXML.php" method="POST">
-                <fieldset>
-                    <legend>Input new To Do Item</legend>
-                    Item:<br>
-                    <input type="text" id='item' name="item" placeholder="Item to be Picked up" required>
-                    <br><br>
-                    Preferred location (Optional)<br>
-                    <input type="text" id='dest' name="location" placeholder="Pickup Location">
-                    <br><br>
-                    <input type="submit" value="Submit">
-                </fieldset>
-            </form> 
-        </div>
-        <div>
-            <footer>
-                <hr>
-                <p>Created by: &#10645 Questions? Contact us  &#10646</p>
-                <p>Contact info: <a href="mailto:gz2322@wayne.edu">
-                    gz2322@wayne.edu</a>.</p>
-            </footer>
-        </div>
         <script type="text/javascript" src="cordova.js"></script>
-        <script type="text/javascript" src="scripts/index.js"></script>
-        <script src='scripts/main.js'></script>
-        <script src='scripts/XMLRequests.js'></script>
+        <script type="text/javascript" src="js/index.js"></script>
+        <script type="text/javascript" src="js/eventHandler.js"></script>
+        <script type="text/javascript" src="js/xmlRequests.js"></script>
     </body>
 </html>
